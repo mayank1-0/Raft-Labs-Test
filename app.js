@@ -5,6 +5,8 @@ const csvRouter = require('./routes/csv')
 const bodyParser = require('body-parser')
 const db = require('./db/models/index')
 global.__basedir = __dirname + "/Raft-Labs-Test/..";
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger');
 
 app.use(bodyParser.json())
 
@@ -14,6 +16,8 @@ app.use('/api/csv', csvRouter)
 app.get('/', (req, res) => {
     res.send('Your app is live')
 })
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+
 
 const start = () => {
     db.sequelize.sync()
