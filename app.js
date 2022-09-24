@@ -27,11 +27,134 @@ app.use(bodyParser.json())
 
 app.use('/api/v1/tasks', router)
 
+// Swagger Definitions
+
 /** 
  * @swagger 
- * /Employees: 
+ * /uploadAuthors: 
+ *   post: 
+ *     description: Upload data to Authors table
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /uploadBooks: 
+ *   post: 
+ *     description: Upload data to Books table 
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /uploadMagazines: 
+ *   post: 
+ *     description: Upload data to Magazines table 
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /getAuthors: 
  *   get: 
- *     description: Get all Employee 
+ *     description: Get all authors
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /getBooks: 
+ *   get: 
+ *     description: Get all books
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /getMagazines: 
+ *   get: 
+ *     description: Get all magazines
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /getBookByIsbn/:isbn: 
+ *   get: 
+ *     description: Get book by it's isbn
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /getMagazineByIsbn/:isbn: 
+ *   get: 
+ *     description: Get magazine by it's isbn 
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /getMagazinesAndBooksByAuthor/:authorEmail: 
+ *   get: 
+ *     description: Get magazines and books by author's email 
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /getBooksAndMagazines: 
+ *   get: 
+ *     description: Get all books and magazines 
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /addBook: 
+ *   post: 
+ *     description: Add book to database 
+ *     responses:  
+ *       200: 
+ *         description: Success  
+ *   
+ */ 
+
+/** 
+ * @swagger 
+ * /addMagazine: 
+ *   post: 
+ *     description: Add magazine to database 
  *     responses:  
  *       200: 
  *         description: Success  
