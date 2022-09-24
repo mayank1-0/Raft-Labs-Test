@@ -13,12 +13,18 @@ const swaggerJSDoc = require('swagger-jsdoc');
 //Swagger Configuration  
 const swaggerOptions = {  
     swaggerDefinition: {  
-        info: {  
-            title:'Raft-Labs-Test',  
-            version:'3.0.3'  
-        }  
-    },  
-    apis:['app.js'],  
+        info: {
+            title:'Raft-Labs-Test',
+            description: "Uploading csv files' data to database", //  desc.
+            version:'3.0.3'
+        },
+        tags: [
+            {
+              name: "To import csv data from files to database", // name of a tag
+            },
+          ],
+    },
+    apis:['app.js'],
 }  
 const swaggerDocs = swaggerJSDoc(swaggerOptions);
 app.use('/api-docs',swaggerUi.serve,swaggerUi.setup(swaggerJSDoc));
@@ -31,14 +37,14 @@ app.use('/api/v1/tasks', router)
 
 /** 
  * @swagger 
- * /uploadAuthors: 
+ * /uploadAuthors:
  *   post: 
  *     description: Upload data to Authors table
  *     responses:  
  *       200: 
  *         description: Success  
  *   
- */ 
+ */
 
 /** 
  * @swagger 
